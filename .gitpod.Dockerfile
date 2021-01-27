@@ -18,7 +18,7 @@ RUN cd /home/gitpod/.dotfiles && git rev-parse HEAD
 # RUN cd /home/gitpod/.dotfiles && git submodule update --init --recursive
 
 # remove existing files
-RUN rm ~/.bashrc || rm ~/.gitconfig || rm /home/gitpod/.zprezto/runcoms/zshrc
+RUN rm ~/.bashrc || rm ~/.gitconfig || rm /home/gitpod/.zprezto/runcoms/zshrc || rm ~/.zshrc
 
 # symlinks
 # RUN ln ~/.dotfiles/zshrc /home/gitpod/.zprezto/runcoms/zshrc -s && ls /home/gitpod/.zprezto/runcoms/zshrc -lsa
