@@ -7,11 +7,13 @@ USER gitpod
 #
 
 # Prereqs
-RUN sudo apt update && sudo apt upgrade && sudo apt install zsh
-RUN sudo apt-get install tmux
+RUN sudo apt-get update 
+RUN sudo apt-get upgrade -y
+RUN sudo apt-get install zsh -y
+RUN sudo apt-get install tmux -y
 
 # clone dotfiles
-RUN git clone git@github.com:NealKaviratna/dotfiles.git /home/gitpod/.dotfiles
+RUN git clone https://github.com/NealKaviratna/dotfiles.git /home/gitpod/.dotfiles
 RUN cd /home/gitpod/.dotfiles && git submodule update --init --recursive
 
 # remove existing files
