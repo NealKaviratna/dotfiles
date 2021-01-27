@@ -8,7 +8,7 @@ USER gitpod
 
 # Prereqs
 RUN sudo apt-get update 
-RUN sudo apt-get upgrade
+RUN sudo apt-get upgrade -y
 RUN sudo apt-get install zsh
 RUN sudo apt-get install tmux
 
