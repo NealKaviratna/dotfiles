@@ -7,7 +7,9 @@ USER gitpod
 #
 
 # Prereqs
-RUN sudo apt-get update && sudo apt-get upgrade && sudo apt-get install zsh
+RUN sudo apt-get update 
+RUN sudo apt-get upgrade
+RUN sudo apt-get install zsh
 RUN sudo apt-get install tmux
 
 # clone dotfiles
