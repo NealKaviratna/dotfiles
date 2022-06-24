@@ -25,6 +25,7 @@ alias k="kubectl"
 alias tf="terraform"
 alias awsk8="aws eks --region us-east-2 update-kubeconfig --name"
 alias calogin="aws codeartifact login --repository pypi-store --domain ottertune --tool"
+alias open="gp open"
 
 #----------------------------------------------------------
 # COMPLETION SETTINGS
@@ -41,6 +42,8 @@ zstyle ':completion:*' menu select=2
 
 export HISTSIZE=10000
 export HISEFILESIZE=10000
+export HISTFILE=/workspace/.zhistory
+
 export PATH=/home/nkaviratna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/nkaviratna/Programs/hadoop-2.8.1/bin:/home/nkaviratna/Programs/hadoop-2.8.1/bin:/home/nkaviratna/bin:$JAVA_HOME/bin
 
 export PATH=/ide/bin:$PATH
@@ -54,4 +57,4 @@ export JAVA_HOME=/home/linuxbrew/.linuxbrew
 export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ottertune --domain-owner 691523222388 --query authorizationToken --output text`
 export REACT_APP_API_BASE=`gp url 8000`
 export REACT_APP_STATIC_IMAGE_BASE=`gp url 8000`/static/
-export ALLOWED_HOSTS=".gitpod.io"
+export ALLOWED_HOSTS=".gitpod.io, 10.20.15.8"
