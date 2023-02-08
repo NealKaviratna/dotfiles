@@ -227,3 +227,5 @@ export NVM_DIR="$HOME/.nvm"
 ##########  Gitpod - append - end
 ###############################################################################
 
+export DISPLAY=:0
+test -v GITPOD_REPO_ROOT && gp-vncsession

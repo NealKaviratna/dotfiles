@@ -3,6 +3,8 @@
 	email = kaviratnaneal@gmail.com
 [core]
 	editor = nano
+[push]
+	autoSetupRemote = true
 [pull]
 	rebase = false
 [merge]
@@ -43,3 +45,5 @@
 	default = simple
 [help]
 	autocorrect = 20
+[safe]
+	directory = *

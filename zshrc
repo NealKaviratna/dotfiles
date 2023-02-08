@@ -58,3 +58,6 @@ export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domai
 export REACT_APP_API_BASE=`gp url 8000`
 export REACT_APP_STATIC_IMAGE_BASE=`gp url 8000`/static/
 export ALLOWED_HOSTS=".gitpod.io, 10.20.15.8"
+
+export DISPLAY=:0
+test -v GITPOD_REPO_ROOT && gp-vncsession
