@@ -217,15 +217,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-###############################################################################
-##########  Gitpod - append - begin
-###############################################################################
-
-
-###############################################################################
-##########  Gitpod - append - end
-###############################################################################
+export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ottertune --domain-owner 691523222388 --query authorizationToken --output text`
+export REACT_APP_API_BASE=`gp url 8000`
+export REACT_APP_STATIC_IMAGE_BASE=`gp url 8000`/static/
+export ALLOWED_HOSTS=".gitpod.io, 10.20.15.8"
 
 export DISPLAY=:0
 test -v GITPOD_REPO_ROOT && gp-vncsession
+
