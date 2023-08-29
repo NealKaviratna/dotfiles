@@ -4,11 +4,7 @@ Dotfile repository for nkaviratna
 
 ----
 
-## Prereqs
-
-- must have apt
-
 ## Setup
 
-1. clone repository
+1. clone repository to `~/.dotfiles`
 2. run `./boostrap.sh`
