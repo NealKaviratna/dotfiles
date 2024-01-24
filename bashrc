@@ -1,61 +1,3 @@
-
-
-###############################################################################
-##########  Gitpod - prepend
-###############################################################################
-
-# Prompt color and bash_completion
-export PS1='\[\e]0;\u \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w \$ \[\033[00m\]'
-#source /etc/bash_completion
-
-# editor config - should be removed when registry facade is default
-if [ -z "$EDITOR" ]; then
-    export EDITOR="gp open -w"
-fi
-if [ -z "$VISUAL" ]; then
-    export VISUAL="$EDITOR"
-fi
-if [ -z "$GIT_EDITOR" ]; then
-    export GIT_EDITOR="$EDITOR"
-fi
-
-# Workaround Java pre v10 by explicitly setting "-Xmx" for all Hotspot/openJDK VMs
-if [ -n "$GITPOD_MEMORY" ]; then
-    export JAVA_TOOL_OPTIONS="-Xmx${GITPOD_MEMORY}m";
-fi
-
-# Completion for gp command
-. <(gp completion)
-# ide cli config - should be removed when registry facade is default
-if [ ! -d "/ide/bin/" ]; then 
-    alias open='gp open'
-    alias code='gp open'
-fi
-
-export GEM_HOME=/workspace/.rvm
-export GEM_PATH=$GEM_HOME:$GEM_PATH
-export PATH=/workspace/.rvm/bin:$PATH
-
-export PIPENV_VENV_IN_PROJECT=true
-export PIP_USER=yes
-export PYTHONUSERBASE=/workspace/.pip-modules
-export PATH=$PYTHONUSERBASE/bin:$PATH
-unset PIP_TARGET
-unset PYTHONPATH
-
-# Set CARGO_HOME to reside in workspace if:
-#  - it's RUNTIME (/workspace present)
-if [ -d /workspace ]; then
-    export CARGO_HOME=/workspace/.cargo
-    export PATH=$CARGO_HOME/bin:$PATH
-fi
-
-export BROWSER="${BROWSER:=gp-preview}"
-
-###############################################################################
-##########  Gitpod - prepend
-###############################################################################
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -221,7 +163,4 @@ export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domai
 export REACT_APP_API_BASE=`gp url 8000`
 export REACT_APP_STATIC_IMAGE_BASE=`gp url 8000`/static/
 export ALLOWED_HOSTS=".gitpod.io, 10.20.15.8"
-
-export DISPLAY=:0
-test -v GITPOD_REPO_ROOT && gp-vncsession
 
