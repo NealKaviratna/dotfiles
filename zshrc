@@ -23,9 +23,6 @@ alias goodnight="git checkout master && git pull && arc cascade && ./rops build 
 alias sai="EDITOR=nano ./tools/bonsai"
 alias k="kubectl"
 alias tf="terraform"
-alias awsk8="aws eks --region us-east-2 update-kubeconfig --name"
-alias calogin="aws codeartifact login --repository pypi-store --domain ottertune --tool"
-alias open="gp open"
 
 #----------------------------------------------------------
 # COMPLETION SETTINGS
@@ -48,16 +45,4 @@ export PATH=/home/nkaviratna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin
 
 export PATH=/ide/bin:$PATH
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change. (From gitpod)
-export PATH="$PATH:$HOME/.rvm/bin"
 
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-export JAVA_HOME=/home/linuxbrew/.linuxbrew
-
-export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ottertune --domain-owner 691523222388 --query authorizationToken --output text`
-export REACT_APP_API_BASE=`gp url 8000`
-export REACT_APP_STATIC_IMAGE_BASE=`gp url 8000`/static/
-export ALLOWED_HOSTS=".gitpod.io, 10.20.15.8"
-
-export DISPLAY=:0
-test -v GITPOD_REPO_ROOT && gp-vncsession
